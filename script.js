@@ -2,26 +2,25 @@ var totalSeconds = 0;
 var maxTime = 3 * 60 * 60; 
 
 function addTime() {
-  var hours = parseInt(document.getElementById("hours").value) || 0; // Default to 0 if empty
-  var minutes = parseInt(document.getElementById("minutes").value) || 0; // Default to 0 if empty
-  var seconds = parseInt(document.getElementById("seconds").value) || 0; // Default to 0 if empty
+//   var hours = parseInt(document.getElementById("hours").value) || 0; 
+  var minutes = parseInt(document.getElementById("minutes").value) || 0; 
+  var seconds = parseInt(document.getElementById("seconds").value) || 0; 
 
-  totalSeconds += hours * 3600 + minutes * 60 + seconds;
+  totalSeconds +=  minutes * 60 + seconds;
 
   var totalHours = Math.floor(totalSeconds / 3600);
   var remainingSeconds = totalSeconds % 3600;
   var remainingMinutes = Math.floor(remainingSeconds / 60);
   remainingSeconds = remainingSeconds % 60;
 
-  // Update result display
   document.getElementById("result-hours").innerText = "Hours: " + totalHours;
   document.getElementById("result-minutes").innerText =
     "Minutes: " + remainingMinutes;
   document.getElementById("result-seconds").innerText =
     "Seconds: " + remainingSeconds;
 
-  // Clear input fields
-  document.getElementById("hours").value = "";
+
+//   document.getElementById("hours").value = "";
   document.getElementById("minutes").value = "";
   document.getElementById("seconds").value = "";
 
